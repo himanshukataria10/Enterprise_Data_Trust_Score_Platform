@@ -6,6 +6,11 @@ Enterprise Data Trust Score Platform is an end-to-end Data Engineering and Data 
 The project validates enterprise data quality, calculates trust scores, stores processed data in SQLite, and visualizes insights through an interactive Power BI dashboard.
 
 ---
+## 📷 Dashboard Preview
+
+<img width="1312" height="737" alt="image" src="https://github.com/user-attachments/assets/c7f8a4f1-3e69-40a2-88f1-ebffaeec11d3" />
+
+---
 
 ## 🚀 Tech Stack
 
@@ -59,13 +64,6 @@ Enterprise_Data_Trust_Score_Platform/
 - Employees by Department
 - Employees by City
 - Trust Category Distribution
-
----
-
-## 📷 Dashboard Preview
-
-<img width="1312" height="737" alt="image" src="https://github.com/user-attachments/assets/c7f8a4f1-3e69-40a2-88f1-ebffaeec11d3" />
-
 
 ---
 
