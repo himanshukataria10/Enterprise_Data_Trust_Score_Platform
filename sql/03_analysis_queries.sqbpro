@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="03_analysis_queries.sql" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="676"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><table title=".Browsables" custom_title="0" dock_id="1" table="0,10:Browsables"/><dock_state state="000000ff00000000fd00000001000000020000000000000000fc0100000001fb000000160064006f0063006b00420072006f00770073006500310100000000ffffffff0000011300ffffff000000000000000000000004000000040000000800000008fc00000000"/><default_encoding codec=""/><browse_table_settings/></tab_browse><tab_sql><sql name="SQL 1*">/*
+===========================================
+Enterprise Data Trust Score Platform
+Analysis Queries
+===========================================
+*/
+
+
+-- 1. View Complete Dataset
+
+SELECT *
+FROM employees;
+
+
+-- 2. Total Employees
+
+SELECT
+COUNT(*) AS Total_Employees
+FROM employees;
+
+
+-- 3. Department Wise Employees
+
+SELECT
+
+Department,
+
+COUNT(*) AS Total_Employees
+
+FROM employees
+
+GROUP BY Department
+
+ORDER BY Total_Employees DESC;
+
+
+-- 4. Average Salary
+
+SELECT
+
+ROUND(
+AVG(Salary),
+2
+) AS Average_Salary
+
+FROM employees;
+
+
+-- 5. Highest Salary
+
+SELECT
+
+MAX(Salary)
+AS Highest_Salary
+
+FROM employees;
+
+
+-- 6. Lowest Salary
+
+SELECT
+
+MIN(Salary)
+AS Lowest_Salary
+
+FROM employees;
+
+
+-- 7. Average Trust Score
+
+SELECT
+
+ROUND(
+AVG(Trust_Score),
+2
+) AS Average_Trust_Score
+
+FROM employees;
+
+
+-- 8. Trust Category Count
+
+SELECT
+
+Trust_Category,
+
+COUNT(*) AS Employees
+
+FROM employees
+
+GROUP BY Trust_Category;
+
+
+-- 9. Department Wise Average Salary
+
+SELECT
+
+Department,
+
+ROUND(
+AVG(Salary),
+2
+) AS Average_Salary
+
+FROM employees
+
+GROUP BY Department
+
+ORDER BY Average_Salary DESC;
+
+
+-- 10. Top 10 Highest Paid Employees
+
+SELECT
+
+Employee_ID,
+
+First_Name,
+
+Last_Name,
+
+Department,
+
+Salary
+
+FROM employees
+
+ORDER BY Salary DESC
+
+LIMIT 10;
+
+
+-- 11. City Wise Employees
+
+SELECT
+
+City,
+
+COUNT(*) AS Employees
+
+FROM employees
+
+GROUP BY City
+
+ORDER BY Employees DESC;
+
+
+-- 12. Trust Score Wise Employees
+
+SELECT
+
+Trust_Score,
+
+COUNT(*) AS Employees
+
+FROM employees
+
+GROUP BY Trust_Score
+
+ORDER BY Trust_Score DESC;</sql><current_tab id="0"/></tab_sql></sqlb_project>
